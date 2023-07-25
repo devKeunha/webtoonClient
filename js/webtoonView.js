@@ -1,4 +1,4 @@
-import { WebSite, getImageList, SeverUrl } from "./server.js";
+import { getImageList, SeverUrl } from "./server.js";
 
 const divImageContainer = document.querySelector("div.image-gallery");
 const divLocation = document.getElementById("locationCheck");
@@ -7,9 +7,6 @@ const webToonid = urlParams.get("webtoonId");
 let pageNo = urlParams.get("pageNo");
 const maxPageNo = urlParams.get("maxPageNo");
 let isLoading = false;
-
-const webtoonLink = document.getElementById("otherToonWebsite");
-webtoonLink.setAttribute("href", WebSite);
 
 async function loadImageList() {
   const list = await getImageList(webToonid, pageNo).then((html) =>
