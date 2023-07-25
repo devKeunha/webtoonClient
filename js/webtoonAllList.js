@@ -1,5 +1,8 @@
 const webToonListDiv = document.getElementById("contens-webtoons-container");
-import { BaseUrl, getAllWebToons, addRegistry } from "./server.js";
+import { WebSite, getAllWebToons, addRegistry } from "./server.js";
+
+const webtoonLink = document.getElementById("otherToonWebsite");
+webtoonLink.setAttribute("href", WebSite);
 
 let pageNo = 1;
 let isLoading = false;
@@ -14,7 +17,7 @@ async function writeWebToonList(keyword) {
 }
 
 function templateWebtoon(webToon) {
-  const siteName = webToon.websiteCode == "WEB_NAVER" ? "NAVER" : "NEWTOKI";
+  const siteName = webToon.websiteCode == "WEB_NAVER" ? "NAVER" : "OTHER";
   const tempDate = Date.parse(webToon.updateAt);
   const date = new Date(tempDate);
 

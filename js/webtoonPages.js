@@ -1,10 +1,18 @@
 const webToonListDiv = document.getElementById("contens-webtoons-container");
-import { BaseUrl, getWebtoonPageList, fileReDownloads } from "./server.js";
+import {
+  WebSite,
+  BaseUrl,
+  getWebtoonPageList,
+  fileReDownloads,
+} from "./server.js";
 const urlParams = new URLSearchParams(window.location.search);
 const site = urlParams.get("site");
 const webToonid = urlParams.get("webtoonId");
 const maxPageNo = urlParams.get("maxPageNo");
 let isDownloading = false;
+
+const webtoonLink = document.getElementById("otherToonWebsite");
+webtoonLink.setAttribute("href", WebSite);
 
 async function writeWebToonList(toonId) {
   const list = await getWebtoonPageList(toonId);

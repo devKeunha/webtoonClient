@@ -1,5 +1,6 @@
 const webToonListDiv = document.getElementById("contens-webtoons-container");
 import {
+  WebSite,
   BaseUrl,
   getWebtoonList,
   fileDownloads,
@@ -15,8 +16,11 @@ async function writeWebToonList() {
   subscribeEvent();
 }
 
+const webtoonLink = document.getElementById("otherToonWebsite");
+webtoonLink.setAttribute("href", WebSite);
+
 function templateWebtoon(webToon) {
-  const siteName = webToon.data === "WEB_NAVER" ? "NAVER" : "NEWTOKI";
+  const siteName = webToon.data === "WEB_NAVER" ? "NAVER" : "OTHER";
   const tempDate = Date.parse(webToon.updateAt);
   const date = new Date(tempDate);
 
