@@ -20,7 +20,13 @@ const webtoonLink = document.getElementById("otherToonWebsite");
 webtoonLink.setAttribute("href", WebSite);
 
 function templateWebtoon(webToon) {
-  const siteName = webToon.data === "WEB_NAVER" ? "NAVER" : "OTHER";
+  const siteName =
+    webToon.data === "WEB_NAVER"
+      ? "NAVER"
+      : webToon.data === "WEB_COMIC"
+      ? "COMIC"
+      : "OTHER";
+  const siteSimbol = webToon.data === "WEB_COMIC" ? "C" : "N";
   const tempDate = Date.parse(webToon.updateAt);
   const date = new Date(tempDate);
 
@@ -41,7 +47,7 @@ function templateWebtoon(webToon) {
 <li>
   <div class="webtoon">
       <div class="webtoon-header">          
-          <p class='${siteName.toLowerCase()}'>N</p>
+          <p class='${siteName.toLowerCase()}'>${siteSimbol}</p>
           <a href="/webtoonPages.html?site=${siteName.toLowerCase()}&webtoonId=${
     webToon.webtoonID
   }&pageNo=${webToon.viewLastPageNo}&maxPageNo=${webToon.maxPageNum}">

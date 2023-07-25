@@ -226,3 +226,19 @@
   border-right: 5px solid #C75B3A;
   border-radius: 100%
 }
+
+
+.comic {
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #87cceb;
+  font-size: 16px;
+  font-weight: bold;
+  border-right: 5px solid #87cceb;
+  border-radius: 100%
+}

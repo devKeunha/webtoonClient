@@ -17,7 +17,13 @@ async function writeWebToonList(keyword) {
 }
 
 function templateWebtoon(webToon) {
-  const siteName = webToon.websiteCode == "WEB_NAVER" ? "NAVER" : "OTHER";
+  const siteName =
+    webToon.websiteCode === "WEB_NAVER"
+      ? "NAVER"
+      : webToon.websiteCode === "WEB_COMIC"
+      ? "COMIC"
+      : "OTHER";
+  const siteSimbol = webToon.websiteCode === "WEB_COMIC" ? "C" : "N";
   const tempDate = Date.parse(webToon.updateAt);
   const date = new Date(tempDate);
 
@@ -30,7 +36,7 @@ function templateWebtoon(webToon) {
 <li>
   <div class="webtoon">
       <div class="webtoon-header">
-        <p class='${siteName.toLowerCase()}'>N</p>
+        <p class='${siteName.toLowerCase()}'>${siteSimbol}</p>
         <a href="${webToon.siteUrl}">
           <div class="webtoon-info">
               <h3>${webToon.title}</h3>
