@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="top-section">
+            <nav>
+                <a href="/">
+                    <i class='bx bx-home'></i>
+                </a>
+                <a href="https://newtoki298.com/">
+                    <i class='bx bx-cloud'></i>
+                </a>
+            </nav>
+        </div>
+        <div class="bottom-section">
+            <div class="find-section">
+                <form id="form-search" action="#">
+                    <div class="form-input">
+                        <input class="search" id="search-keyword" type="search" placeholder="Search...">
+                        <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="dashItem">
+                <div class="dashItemTitle">
+                    <i class='bx bxs-dashboard'></i>
+                    웹툰
+                </div>
+                <div class="contens-webtoon-list">
+                    <ul id="contens-webtoons-container">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/webtoonAllList.js"></script>
+</body>
+
+</html>
