@@ -1,9 +1,25 @@
 const BASE_URL = "http://172.30.1.16:8080/webtoon";
+// const BASE_URL = "http://127.0.0.1:8080/webtoon";
 const BASE_SERVER = "http://172.30.1.16:8080";
 
 export const BaseUrl = BASE_URL;
 export const SeverUrl = BASE_SERVER;
-export const WebSite = "https://newtoki298.com/";
+export const getWebSite = async function () {
+  try {
+    const url = BASE_URL + "/defult";
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+    const result = await response.json();
+    return result.other_site_url;
+  } catch {
+    return "#";
+  }
+};
 
 export const getWebtoonList = async function () {
   const url = BASE_URL + "/getList";

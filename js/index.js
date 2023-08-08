@@ -1,6 +1,6 @@
 const webToonListDiv = document.getElementById("contens-webtoons-container");
 import {
-  WebSite,
+  getWebSite,
   BaseUrl,
   getWebtoonList,
   fileDownloads,
@@ -17,7 +17,8 @@ async function writeWebToonList() {
 }
 
 const webtoonLink = document.getElementById("otherToonWebsite");
-webtoonLink.setAttribute("href", WebSite);
+const url = await getWebSite();
+webtoonLink.setAttribute("href", url);
 
 function templateWebtoon(webToon) {
   const siteName =

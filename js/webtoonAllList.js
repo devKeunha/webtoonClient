@@ -1,8 +1,9 @@
 const webToonListDiv = document.getElementById("contens-webtoons-container");
-import { WebSite, getAllWebToons, addRegistry } from "./server.js";
+import { getWebSite, getAllWebToons, addRegistry } from "./server.js";
 
 const webtoonLink = document.getElementById("otherToonWebsite");
-webtoonLink.setAttribute("href", WebSite);
+const url = await getWebSite();
+webtoonLink.setAttribute("href", url);
 
 let pageNo = 1;
 let isLoading = false;
